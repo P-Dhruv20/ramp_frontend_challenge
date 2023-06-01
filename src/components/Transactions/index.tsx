@@ -9,6 +9,7 @@ export const Transactions: TransactionsComponent = ({ transactions }) => {
 
   const setTransactionApproval = useCallback<SetTransactionApprovalFunction>(
     async ({ transactionId, newValue }) => {
+      console.log("newvalues ", newValue, "tracn id ", transactionId)
       await fetchWithoutCache<void, SetTransactionApprovalParams>("setTransactionApproval", {
         transactionId,
         value: newValue,
@@ -29,6 +30,7 @@ export const Transactions: TransactionsComponent = ({ transactions }) => {
           transaction={transaction}
           loading={loading}
           setTransactionApproval={setTransactionApproval}
+          approved={transaction.approved}
         />
       ))}
     </div>
