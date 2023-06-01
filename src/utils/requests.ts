@@ -40,6 +40,7 @@ export const getTransactionsPaginated = ({
 }
 
 export const getTransactionsByEmployee = ({ employeeId }: RequestByEmployeeParams) => {
+  console.log(employeeId)
   if (!employeeId) {
     throw new Error("Employee id cannot be empty")
   }
